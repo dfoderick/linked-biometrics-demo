@@ -29,6 +29,14 @@ Objects that may need custom libraries for handling...
 * presentation  
 * rules
 
+# Development
+Run using node version 16.
+```
+nvm use 16
+yarn install
+yarn start
+```
+
 
 
 # Linked Biometrics Claim Deduction demo
