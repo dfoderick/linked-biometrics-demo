@@ -1,3 +1,17 @@
+# Convert to use Bitcoin ZKP
+These are the likely modification points.
+
+src/helpers/common.js
+* issueCredential(suite, credential, true, documentLoader)
+* verifyPresentation(presentation)
+* defaultDocumentLoader(url) (DID resolver)
+
+src/helpers/create-presentation.js
+* proveCompositeClaims(presentation, [toProve], rules)
+
+src/helpers/verify.js
+* acceptCompositeClaims(presentation, rules)
+
 # Linked Biometrics Claim Deduction demo
 
 A simple demonstration using linked biometrics with Claim Deduction and Verifiable Credentials for age verification. The demo is a simulated vending machine that performs age verification before dispensing items. Try it yourself [here](https://biometrics-demo.dock.io).
