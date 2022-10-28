@@ -1,5 +1,11 @@
 # Convert to use Bitcoin ZKP
-These are the likely modification points.
+Tasks
+- [ ] Store dids on blockchain
+- [ ] DID resolver for bitcoin
+- [ ] convert proof to ZKP inside credential
+- [ ] integrate scrypt for verification
+
+These are the likely modification points.  
 
 src/helpers/common.js
 * issueCredential(suite, credential, true, documentLoader)
@@ -11,6 +17,19 @@ src/helpers/create-presentation.js
 
 src/helpers/verify.js
 * acceptCompositeClaims(presentation, rules)
+
+src/helpers/didcache.js  
+private keys for dids
+* ageRoot
+* delegate1, 2, 3
+* 'did:demo:age_root'
+
+Objects that may need custom libraries for handling...  
+* credential  
+* presentation  
+* rules
+
+
 
 # Linked Biometrics Claim Deduction demo
 
