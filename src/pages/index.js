@@ -24,6 +24,13 @@ const StyledLogo = styled(Logo)`
   left: 25px;
   top: 15px;
 `;
+const StyledCarStashLogo = styled.img`
+  position: fixed;
+  left: 25px;
+  top: 15px;
+  height:10%;
+  width:5%;
+`;
 
 const VendingMachineWrapper = styled.div`
   position: fixed;
@@ -246,7 +253,7 @@ export default function IndexPage() {
   return (
     <>
       <Header>
-        <StyledLogo />
+        <StyledCarStashLogo src={`/images/carstash.png`} />
         <VendingMachineWrapper className={isMatch && `anim-shake`}>
           <CarStyled src={`/images/car.svg`} />
           {showCan && (
@@ -260,15 +267,15 @@ export default function IndexPage() {
 
         <RightContentWrapper>
           <RightContent>
-            <h1>Stash Access Demo</h1>
+            <h1>Stash Vehicle Access Demo</h1>
             <p>
-              This demo is an example of how claim deduction, facial recognition and verifiable credentials can be used to cryptographically verify a subjects age for the purchase of age restricted items, removing the need for a human "in the loop".
+              An example of how claim deduction, facial recognition and verifiable credentials can be used to cryptographically verify a subjects age for the purchase of age restricted items.
             </p>
             <p>
-              This virtual vending machine takes a verifiable presentation, which contains an image of the subject’s face. When the VP is uploaded, the vending machine will use your device’s camera to verify that you are the person referred to by the credential.
+              This virtual car purchase takes a verifiable presentation, which contains an image of the subject’s face. When the VP is uploaded, the virtual car will use your device’s camera to verify that you are the person referred to by the credential.
             </p>
             <p>
-              To try for yourself, issue your own credential below and download it. Next, click the “Buy” button in the bottom left corner and upload your presentation when ready. If your face matches the picture in your credential, the machine will dispense a drink!
+              To try for yourself, issue your own credential below and download it. Next, click the “Buy” button in the bottom left corner and upload your presentation when ready. If your face matches the picture in your credential, you get the key to the car!
             </p>
             <p>
               You can read more about the technical details of this demo in the <a href="https://github.com/docknetwork/linked-biometrics-demo">GitHub repository</a>.
@@ -281,7 +288,7 @@ export default function IndexPage() {
           </RightContent>
 
           <RightContent>
-            <h1>Issue your own credential</h1>
+            <h1>Get your Age Credential</h1>
             <p>
               This demo will accept credentials issued by you as the private key is stored on this page.
               Upload or take a clear picture of yourself to download your own credential for verification.
