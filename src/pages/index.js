@@ -39,6 +39,40 @@ const VendingMachineStyled = styled.img`
   top: 0;
 `;
 
+const CarStyled = styled.img`
+  height: 60%;
+  width: 50%;
+  position: relative;
+  left: 0;
+  top: 0;
+`;
+
+const CarKey = styled.img`
+  height: 30%;
+  width: 30%
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  bottom: 0;
+  z-index: 1;
+  animation: canReveal 2s;
+  animation-iteration-count: 1;
+
+  @keyframes canReveal {
+    0% { transform: translate(0, -8px) rotate(0deg); opacity: 0; }
+    10% { transform: translate(0, -8px) rotate(-1deg); }
+    20% { transform: translate(0, -8px) rotate(1deg); }
+    30% { transform: translate(0, -7px) rotate(0deg); }
+    40% { transform: translate(0, -6px) rotate(1deg); opacity: 1.0; }
+    50% { transform: translate(0, -5px) rotate(-1deg); }
+    60% { transform: translate(0, -4px) rotate(0deg); }
+    70% { transform: translate(0, -3px) rotate(-1deg); }
+    80% { transform: translate(0, -2px) rotate(1deg); }
+    90% { transform: translate(0, -1px) rotate(0deg); }
+    100% { transform: translate(0, 0px) rotate(0deg); }
+  }
+`;
+
 const VendingMachineCan = styled.img`
   height: 100%;
   position: absolute;
@@ -214,9 +248,11 @@ export default function IndexPage() {
       <Header>
         <StyledLogo />
         <VendingMachineWrapper className={isMatch && `anim-shake`}>
-          <VendingMachineStyled src={`/images/vending-machine.svg`} />
+          <CarStyled src={`/images/car.svg`} />
           {showCan && (
-            <VendingMachineCan src={`/images/can.svg`} />
+            <div style={{marginLeft:"340px"}}>
+            <CarKey src={`/images/carkey.svg`} />
+            </div>
           )}
         </VendingMachineWrapper>
 
@@ -224,7 +260,7 @@ export default function IndexPage() {
 
         <RightContentWrapper>
           <RightContent>
-            <h1>Dock Claim Deduction Demo</h1>
+            <h1>Stash Access Demo</h1>
             <p>
               This demo is an example of how claim deduction, facial recognition and verifiable credentials can be used to cryptographically verify a subjects age for the purchase of age restricted items, removing the need for a human "in the loop".
             </p>
