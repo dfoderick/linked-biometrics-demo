@@ -24,17 +24,37 @@ const StyledLogo = styled(Logo)`
   left: 25px;
   top: 15px;
 `;
+
+// position: relative;
+
+const SellerStyled = styled.div`
+  position: fixed;
+  left: 195px;
+  top: 15px;
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  gap:1em;
+  padding: 1em;
+`;
+
 const StyledCarStashLogo = styled.img`
   position: fixed;
   left: 25px;
   top: 15px;
-  height:10%;
-  width:5%;
+  height:15%;
+  width:10%;
+`;
+
+const InputColumnWrapper = styled.div`
+  margin:1em;
 `;
 
 const VendingMachineWrapper = styled.div`
   position: fixed;
-  left: 40px;
+  left: 60px;
   top: 0;
   height: 100%;
 `;
@@ -254,6 +274,13 @@ export default function IndexPage() {
     <>
       <Header>
         <StyledCarStashLogo src={`/images/carstash.png`} />
+        <SellerStyled>
+            <InputColumnWrapper>Require</InputColumnWrapper>
+            <InputColumnWrapper><input type="checkbox"></input>&nbsp;Over 18</InputColumnWrapper>
+            <InputColumnWrapper><input type="checkbox"></input>&nbsp;Facial Recognition</InputColumnWrapper>
+            <InputColumnWrapper>
+            </InputColumnWrapper>
+        </SellerStyled>
         <VendingMachineWrapper className={isMatch && `anim-shake`}>
           <CarStyled src={`/images/car.svg`} />
           {showCan && (
@@ -269,30 +296,33 @@ export default function IndexPage() {
           <RightContent>
             <h1>Stash Vehicle Access Demo</h1>
             <p>
-              An example of how claim deduction, facial recognition and verifiable credentials can be used to cryptographically verify a subjects age for the purchase of age restricted items.
+              An example of Zero-Knowledge Credentials.
             </p>
             <p>
-              This virtual car purchase takes a verifiable presentation, which contains an image of the subject’s face. When the VP is uploaded, the virtual car will use your device’s camera to verify that you are the person referred to by the credential.
+              Image that you are selling your car. Select your selling requirements above the car. 
+              You can select age restriction or facial recognition.
             </p>
             <p>
-              To try for yourself, issue your own credential below and download it. Next, click the “Buy” button in the bottom left corner and upload your presentation when ready. If your face matches the picture in your credential, you get the key to the car!
+              Next, imagine that you are now the buyer. You need to acquire the proofs
+              the seller requires.
+            </p>
+            <p>
+              To try for yourself, issue your own proof credentials below and download it. 
+              Next, click the “Buy” button in the bottom left corner and upload your proofs to present them to the seller. 
+              If your face matches the picture in your proof credential, you get the key to the car!
             </p>
             <p>
               You can read more about the technical details of this demo in the <a href="https://github.com/docknetwork/linked-biometrics-demo">GitHub repository</a>.
             </p>
-            <center>
-              <AttributionLink href="https://www.vecteezy.com/free-vector/icons" target="_blank">
-                Icons Vectors by Vecteezy
-              </AttributionLink>
-            </center>
           </RightContent>
 
           <RightContent>
-            <h1>Get your Age Credential</h1>
+            <h1>Get your Credential Proofs</h1>
             <p>
-              This demo will accept credentials issued by you as the private key is stored on this page.
+              This demo will accept credentials issued by you. Normally you would have to get these from
+              a trusted identity issuer.
               Upload or take a clear picture of yourself to download your own credential for verification.
-              Once downloaded, click the “Buy” button to test the demo.
+              Once downloaded, click the “Buy” button to test the demo. No PII is stored on the blockchain for this demo.
             </p>
             <Dropzone {...getRootProps()}>
               <input {...getInputProps()} />

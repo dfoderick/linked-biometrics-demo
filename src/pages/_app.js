@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }) {
       <>
         <Head>
           <meta charSet="utf-8" />
-          <title>Dock Linked Biometrics Demo</title>
+          <title>Stash Demo</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
         <GlobalStyles />
